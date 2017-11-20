@@ -8,7 +8,7 @@ SITEURL = ''
 THEME = 'tuxlite'
 
 PATH = 'content'
-STATIC_PATHS = ['images', 'pdfs', 'code']
+STATIC_PATHS = ['images', 'docs', 'code']
 
 TIMEZONE = 'Europe/Stockholm'
 
