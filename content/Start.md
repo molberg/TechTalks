@@ -28,3 +28,4 @@ added to the list please contact [Camilla Andersson](mailto:camilla.andersson@ch
 
 ###Talks
  * [ssh]({filename}/talks/ssh.md)
+ * [ssh-agent]({filename}/talks/ssh-agent.md)
