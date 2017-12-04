@@ -4,7 +4,7 @@ Tags: ssh
 Author: Franz Kirsten
 
 ##Using ssh and friends
- * The slides are in this [ssh.pdf](docs/ssh.pdf)
+ * The slides are in this [ssh.pdf]({filename}/docs/ssh.pdf)
 ```
 # we spoke about the following tools:
 ssh          # utility to access remote machine
