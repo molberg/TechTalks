@@ -51,7 +51,7 @@ readable (else [github](https://github.com/) is an excellent choice).
 
  * `git` server on `nain.oso.chalmers.se`. I need to manually
    setup the repository for you and will need your public(!)  ssh key
-   to allow accesss. No web interface.
+   to allow access. No web interface.
  * `gitlab` server on `skjold.oso.chalmers.se`. Again, I will need
    your public ssh key to allow accesss, but you administer the
    repository via a web interface.
