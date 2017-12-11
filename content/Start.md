@@ -30,4 +30,5 @@ added to the list please contact [Camilla Andersson](mailto:camilla.andersson@ch
  * [ssh]({filename}/talks/ssh.md)
  * [ssh-agent]({filename}/talks/ssh-agent.md)
  * [overleaf]({filename}/talks/overleaf.md)
+ * [lyx]({filename}/talks/lyx.md)
  * [git]({filename}/talks/git.md)
