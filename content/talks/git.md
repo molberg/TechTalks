@@ -47,7 +47,7 @@ git config --global user.email johndoe@example.com
 
 At the observatory, we currently have two setups which you are welcome
 to use as a remote repository for projects you don't want world
-readable (else {\tt github} is an excellent choice).
+readable (else `github` is an excellent choice).
 
  * `git` server on `nain.oso.chalmers.se`. I need to manually
    setup the repository for you and will need your public(!)  ssh key
