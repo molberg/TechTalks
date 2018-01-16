@@ -32,3 +32,4 @@ added to the list please contact [Camilla Andersson](mailto:camilla.andersson@ch
  * [overleaf]({filename}/talks/overleaf.md)
  * [lyx]({filename}/talks/lyx.md)
  * [git]({filename}/talks/git.md)
+ * [tmux]({filename}/talks/tmux.md)
