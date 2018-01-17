@@ -1,7 +1,7 @@
 Date: 2017-10-17
 Title: About
 
-##Onsala Space Observatory's Tech Talks
+## Onsala Space Observatory's Tech Talks
 
  * When:        **Mondays 10-11 am**
  * Where:       [Onsala Space Observatory](https://www.google.se/maps/place/Onsala+rymdobservatorium,+Chalmers/@57.3961849,11.9082682,14z), Seminar room
