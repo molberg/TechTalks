@@ -33,3 +33,6 @@ added to the list please contact [Camilla Andersson](mailto:camilla.andersson@ch
  * [lyx]({filename}/talks/lyx.md)
  * [git]({filename}/talks/git.md)
  * [tmux]({filename}/talks/tmux.md)
+ * [gimp]({filename}/talks/gimp.md)
+ * [inkscape]({filename}/talks/inkscape.md)
+ 
