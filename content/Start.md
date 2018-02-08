@@ -35,4 +35,5 @@ added to the list please contact [Camilla Andersson](mailto:camilla.andersson@ch
  * [tmux]({filename}/talks/tmux.md)
  * [gimp]({filename}/talks/gimp.md)
  * [inkscape]({filename}/talks/inkscape.md)
- 
+ * [virtualization]({filename}/talks/virtualization.md)
+
