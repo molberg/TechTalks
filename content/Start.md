@@ -5,7 +5,7 @@ save_as: index.html
 
 ##Welcome to Onsala Space Observatory's Tech Talk
 
- * When:        **Mondays 10-11 am**
+ * When:        **Thursdays 10-11 am**
  * Where:       [Onsala Space Observatory](https://www.google.se/maps/place/Onsala+rymdobservatorium,+Chalmers/@57.3961849,11.9082682,14z), Seminar room
  * Contact:     [TechTalk  mailing List](mailto:oso-techtalk.see@chalmers.se)
 
@@ -24,7 +24,7 @@ on [GitHub](https://github.com) to document projects. The syntax is described on
 
 We have a [mailing list](mailto:oso-techtalk.see@chalmers.se) that you can use to bring up
 computing issues and where we will make announcments regarding the seminar. If you'd like to be
-added to the list please contact [Camilla Andersson](mailto:camilla.andersson@chalmers.se).
+added to the list please contact [Camilla Andersson](mailto:camilla.andersson@chalmers.se) or [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ###Talks
  * [ssh]({filename}/talks/ssh.md)
