@@ -3,7 +3,7 @@ Title: Front page
 AUTHOR: Franz Kirsten
 save_as: index.html
 
-##Welcome to Onsala Space Observatory's Tech Talk
+## Welcome to Onsala Space Observatory's Tech Talk
 
  * When:        **Thursdays 10-11 am**
  * Where:       [Onsala Space Observatory](https://www.google.se/maps/place/Onsala+rymdobservatorium,+Chalmers/@57.3961849,11.9082682,14z), Seminar room
@@ -22,9 +22,11 @@ with their notes in markdown format, i.e. the same format that is e.g. used
 on [GitHub](https://github.com) to document projects. The syntax is described on the
 [GitHub Help Pages](https://help.github.com/articles/basic-writing-and-formatting-syntax/).
 
-We have a [mailing list](mailto:oso-techtalk.see@chalmers.se) that you can use to bring up
-computing issues and where we will make announcments regarding the seminar. If you'd like to be
-added to the list please contact [Camilla Andersson](mailto:camilla.andersson@chalmers.se) or [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
+We have a [mailing list](mailto:oso-techtalk.see@chalmers.se) that you
+can use to bring up computing issues and where we will make announcments regarding 
+the seminar. If you'd like to be added to the list please contact 
+[Camilla Andersson](mailto:camilla.andersson@chalmers.se) or 
+[Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ###Talks
  * [ssh]({filename}/talks/ssh.md)
@@ -36,4 +38,6 @@ added to the list please contact [Camilla Andersson](mailto:camilla.andersson@ch
  * [gimp]({filename}/talks/gimp.md)
  * [inkscape]({filename}/talks/inkscape.md)
  * [virtualization]({filename}/talks/virtualization.md)
-
+ * [containers]({filename}/talks/containers.md)
+ * [org-mode]({filename}/talks/orgmode.md)
+ * [anaconda]({filename}/talks/anaconda.md)
