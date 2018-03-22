@@ -1,6 +1,6 @@
 Date: 2017-12-04
 Title: Lyx
-Tags: lyx latex overleaf
+Tags: lyx, latex, overleaf
 Author: Franz Kirsten
 
 ## Lyx - document editor based on latex

@@ -1,6 +1,6 @@
 Date: 2017-11-27
 Title: ssh-agent
-Tags: ssh encryption 
+Tags: ssh, encryption 
 Author: Stephen Bourke
 
 ##ssh-agent
