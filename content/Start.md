@@ -37,6 +37,7 @@ the seminar. If you'd like to be added to the list please contact
  * [tmux]({filename}/talks/tmux.md)
  * [gimp]({filename}/talks/gimp.md)
  * [inkscape]({filename}/talks/inkscape.md)
+ * [rsync,cron]({filename}/talks/rsync-cronjob.md)
  * [virtualization]({filename}/talks/virtualization.md)
  * [containers]({filename}/talks/containers.md)
  * [org-mode]({filename}/talks/orgmode.md)
