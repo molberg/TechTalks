@@ -1,6 +1,6 @@
 Date: 2017-12-04
 Title: Overleaf 
-Tags: overleaf latex
+Tags: overleaf, latex
 Author: Michael Olberg
 
 ## Overleaf - collaborative Writing and Publishing
