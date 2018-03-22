@@ -1,6 +1,6 @@
 Date: 2018-03-15
 Title: Anaconda
-Tags: anaconda python spyder
+Tags: anaconda, python, spyder
 Author: Magnus Persson
 
 ## The Anaconda distribution for Python
