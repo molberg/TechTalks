@@ -42,3 +42,4 @@ the seminar. If you'd like to be added to the list please contact
  * [org-mode]({filename}/talks/orgmode.md)
  * [anaconda]({filename}/talks/anaconda.md)
  * [jupyter]({filename}/talks/jupyter-notebooks.md)
+ * [emacs]({filename}/talks/emacs.md)
