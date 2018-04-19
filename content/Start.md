@@ -17,15 +17,15 @@ technicalities that others have already mastered.
 
 Notes from the various presentations will be collected here and will
 be listed under the [talks](http://yggdrasil.oso.chalmers.se/category/talks.html)
-tag. The presenters should provide [me](mailto:michael.olberg@chalmers.se) 
+tag. The presenters should provide [me](mailto:michael.olberg@chalmers.se)
 with their notes in markdown format, i.e. the same format that is e.g. used
 on [GitHub](https://github.com) to document projects. The syntax is described on the
 [GitHub Help Pages](https://help.github.com/articles/basic-writing-and-formatting-syntax/).
 
 We have a [mailing list](mailto:oso-techtalk.see@chalmers.se) that you
-can use to bring up computing issues and where we will make announcments regarding 
-the seminar. If you'd like to be added to the list please contact 
-[Camilla Andersson](mailto:camilla.andersson@chalmers.se) or 
+can use to bring up computing issues and where we will make announcments regarding
+the seminar. If you'd like to be added to the list please contact
+[Camilla Andersson](mailto:camilla.andersson@chalmers.se) or
 [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ###Talks
@@ -44,3 +44,4 @@ the seminar. If you'd like to be added to the list please contact
  * [anaconda]({filename}/talks/anaconda.md)
  * [jupyter]({filename}/talks/jupyter-notebooks.md)
  * [emacs]({filename}/talks/emacs.md)
+ * [writing R extensions]({filename}/talks/RandFortran.md)
