@@ -5,8 +5,8 @@ save_as: index.html
 
 ## Welcome to Onsala Space Observatory's Tech Talk
 
- * When:        **Thursdays 10-11 am**
- * Where:       [Onsala Space Observatory](https://www.google.se/maps/place/Onsala+rymdobservatorium,+Chalmers/@57.3961849,11.9082682,14z), Seminar room
+ * When:        **every other Wednesday 1.30-2.30 pm**
+ * Where:       [Onsala Space Observatory](https://www.google.se/maps/place/Onsala+rymdobservatorium,+Chalmers/@57.3961849,11.9082682,14z), Conference Room on 2nd floor of Admin Building
  * Contact:     [TechTalk  mailing List](mailto:oso-techtalk.see@chalmers.se)
 
 The idea for this is to be an informal meeting where we can discuss
