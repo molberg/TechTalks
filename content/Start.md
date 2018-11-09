@@ -28,7 +28,12 @@ the seminar. If you'd like to be added to the list please contact
 [Camilla Andersson](mailto:camilla.andersson@chalmers.se) or
 [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
-###Talks
+### Coming Up
+ * Nov 14 we'll discuss how to extract small subimages from a large
+   FITS file in Python and, at the same time, we'll take a bit of a
+   look at astropy.
+
+### Talks
  * [ssh]({filename}/talks/ssh.md)
  * [ssh-agent]({filename}/talks/ssh-agent.md)
  * [overleaf]({filename}/talks/overleaf.md)
