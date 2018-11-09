@@ -29,9 +29,9 @@ the seminar. If you'd like to be added to the list please contact
 [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ### Coming Up
- * Nov 14 we'll discuss how to extract small subimages from a large
+ * **Nov 14:** *We'll discuss how to extract small subimages from a large
    FITS file in Python and, at the same time, we'll take a bit of a
-   look at astropy.
+   look at astropy.*
 
 ### Talks
  * [ssh]({filename}/talks/ssh.md)
