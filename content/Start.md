@@ -29,9 +29,7 @@ the seminar. If you'd like to be added to the list please contact
 [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ### Coming Up
- * **Nov 14:** *We'll discuss how to extract small subimages from a large
-   FITS file in Python and, at the same time, we'll take a bit of a
-   look at astropy.*
+ * **Nov 28:** *We'll have a look into the python [Pandas](https://pandas.pydata.org/) package.*
 
 ### Talks
  * [ssh]({filename}/talks/ssh.md)
@@ -50,3 +48,4 @@ the seminar. If you'd like to be added to the list please contact
  * [jupyter]({filename}/talks/jupyter-notebooks.md)
  * [emacs]({filename}/talks/emacs.md)
  * [writing R extensions]({filename}/talks/RandFortran.md)
+ * [astropy]({filename}/talks/astropy.md)
