@@ -49,3 +49,4 @@ the seminar. If you'd like to be added to the list please contact
  * [emacs]({filename}/talks/emacs.md)
  * [writing R extensions]({filename}/talks/RandFortran.md)
  * [astropy]({filename}/talks/astropy.md)
+ * [OCR]({filename}/talks/OCR.md)
