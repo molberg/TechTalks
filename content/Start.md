@@ -50,3 +50,4 @@ the seminar. If you'd like to be added to the list please contact
  * [writing R extensions]({filename}/talks/RandFortran.md)
  * [astropy]({filename}/talks/astropy.md)
  * [OCR]({filename}/talks/OCR.md)
+ * [pandas]({filename}/talks/pandas.md)
