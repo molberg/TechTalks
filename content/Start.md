@@ -29,7 +29,7 @@ the seminar. If you'd like to be added to the list please contact
 [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ### Coming Up
- * **Nov 28:** *We'll have a look into the python [Pandas](https://pandas.pydata.org/) package.*
+ * **Jan 23:** *We'll have a look at plotting source visibilities with Gildas, if time permits we'll have a first session on python's numpy arrays*
 
 ### Talks
  * [ssh]({filename}/talks/ssh.md)
@@ -50,3 +50,4 @@ the seminar. If you'd like to be added to the list please contact
  * [writing R extensions]({filename}/talks/RandFortran.md)
  * [astropy]({filename}/talks/astropy.md)
  * [OCR]({filename}/talks/OCR.md)
+ * [bash]({filename}/talks/bash.md)
