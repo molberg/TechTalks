@@ -1,5 +1,5 @@
 Date: 2019-01-09
-Title: Some useful bash tools
+Title: Selection of some useful bash tools
 Tags: bash, parallelisation
 Author: Franz Kirsten
 
@@ -27,18 +27,19 @@ Author: Franz Kirsten
    results to a new file -- plus much more!
  * `let` -- a utility to create an integer counter if needed, e.g.:
    ```
-        b=3
+        b=3;
         let b=$b+1 # increments b by one
    ```
- * cut -- parse files column wise
- * paste -- merge files line by line (i.e. combine two files as columns
- * dd -- convert and copy files. I typically use it to cut large files into smaller ones
- * seq --creates a sequence of numbers. This list of numbers can increase/decrease by a
+ * `cut` -- parse files column wise
+ * `paste` -- merge files line by line (i.e. combine two files as columns
+ * `dd` -- convert and copy files. I typically use it to cut large files into smaller ones
+ * `seq` --creates a sequence of numbers. This list of numbers can increase/decrease by a
    user defined step size, output can be padded with zeros, and more
   
 
 ## Parallelisation
-There is 'real' parallelisation with a tool called `mpibash`, but for most bash-related
+There is 'real' parallelisation with a tool called [mpibash](https://github.com/lanl/MPI-Bash),
+but for most bash-related
 tasks it's overkill. I typically parallelise things that are 'embarringly parallel', i.e. I
 perform one and the same task over and over again. An example of this would be the
 conversion of a bunch of images from, say, png to jpg. The different task are completely
@@ -67,7 +68,7 @@ having at most as many instances running as you have CPU cores on your machine. 
 we can define a little helper function that we shall call 'pwait':
 ```
         pwait(){
-                while [ `jobs -p | wc -l` -eq $1 ];do
+                while [ $(jobs -p | wc -l) -ge $1 ]; do
                       sleep 0.33
                 done
                 }
