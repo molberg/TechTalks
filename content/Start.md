@@ -52,3 +52,4 @@ the seminar. If you'd like to be added to the list please contact
  * [OCR]({filename}/talks/OCR.md)
  * [pandas]({filename}/talks/pandas.md)
  * [bash]({filename}/talks/bash.md)
+ * [gildas]({filename}/talks/gildas.md)
