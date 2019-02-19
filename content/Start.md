@@ -29,7 +29,7 @@ the seminar. If you'd like to be added to the list please contact
 [Franz Kirsten](mailto:franz.kirsten@chalmers.se).
 
 ### Coming Up
- * **Jan 23:** *We'll have a look at plotting source visibilities with Gildas, if time permits we'll have a first session on python's numpy arrays*
+ * **Feb 20:** *We'll continue going though a few nice features of numpy arrays. Feel free to play with the jupyter notbook on the [numpy page]({filename}/talks/numpy.md) before the session.*
 
 ### Talks
  * [ssh]({filename}/talks/ssh.md)
@@ -53,3 +53,4 @@ the seminar. If you'd like to be added to the list please contact
  * [pandas]({filename}/talks/pandas.md)
  * [bash]({filename}/talks/bash.md)
  * [gildas]({filename}/talks/gildas.md)
+ * [numpy]({filename}/talks/numpy.md)
