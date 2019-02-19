@@ -1,4 +1,4 @@
-Date: 2019-02-06+20
+Date: 2019-02-06
 Title: Some features of numpy arrays
 Tags: numpy, python, jupyter
 Author: Franz Kirsten
