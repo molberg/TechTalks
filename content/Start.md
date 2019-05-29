@@ -54,3 +54,6 @@ the seminar. If you'd like to be added to the list please contact
  * [bash]({filename}/talks/bash.md)
  * [gildas]({filename}/talks/gildas.md)
  * [numpy]({filename}/talks/numpy.md)
+ * [writing Python extensions]({filename}/talks/python-c-api.md)
+ * [scripting BIFROST]({filename}/talks/bifrost.md)
+ * [reproducible and collaborative research]({filename}/talks/reproducible.md)
