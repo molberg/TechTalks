@@ -4,7 +4,7 @@ Tags: gimp
 Author: Franz Kirsten
 
  * The slides are in this [gimp.pdf]({static}/docs/gimp.pdf)
- * Also check out the notes on [inkscape]({static}/talks/inkscape.md)
+ * Also check out the notes on [inkscape]({filename}/talks/inkscape.md)
 
 ## What is it?
 ### Wikipedia

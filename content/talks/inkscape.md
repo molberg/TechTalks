@@ -3,7 +3,7 @@ Title: Inkscape -- A powerful, free design tool
 Tags: inkscape
 Author: Stephen Bourke
 
- * Also check out the notes on [gimp]({static}/talks/gimp.md)
+ * Also check out the notes on [gimp]({filename}/talks/gimp.md)
 
 ## What is it?
 ### Wikipedia
