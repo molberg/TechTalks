@@ -17,7 +17,7 @@ Author: Franz Kirsten
   * vast amount of document classes
   * renders your input immediately (e.g. mathmatical symbols apear as such)
   * implement your own classes (e.g. A&A, MNRAS, ApJ...)
-  * can be used in conjunction with [Overleaf]({filename}/talks/overleaf.md)
+  * can be used in conjunction with [Overleaf]({static}/talks/overleaf.md)
 
 ### Example of how to implement a class
   * the below works on Ubuntu

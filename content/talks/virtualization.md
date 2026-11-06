@@ -18,15 +18,15 @@ hosts. You have the following choices:
 
 ### Distributed hardware
 
-![hardware]({filename}/images/hardware.png)
+![hardware]({static}/images/hardware.png)
 
 ### Virtual machines
 
-![virtual machines]({filename}/images/virtual.png)
+![virtual machines]({static}/images/virtual.png)
 
 ### Containers
 
-![containers]({filename}/images/container.png)
+![containers]({static}/images/container.png)
 
 ## VirtualBox
 ### Wikipedia

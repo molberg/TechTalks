@@ -3,10 +3,10 @@ Title: Coding in python in a Jupyter Notebook
 Tags: jupyter, python
 Author: Franz Kirsten
 
- * I made some slides showing how to [get started]({filename}/docs/jupyter.pdf)
+ * I made some slides showing how to [get started]({static}/docs/jupyter.pdf)
  * check out the [jupyter website](https://jupyter.org/) for docs and the like
  * for further info on the jupyter extensions check out [their github page](https://github.com/ipython-contrib/jupyter_contrib_nbextensions)
- * feel free to download and play around with the [notebook we worked on]({filename}/code/jupyter.tar.gz); (tarball contains both the notebook and the fits file)
+ * feel free to download and play around with the [notebook we worked on]({static}/code/jupyter.tar.gz); (tarball contains both the notebook and the fits file)
 
 ## Installation
 
@@ -33,7 +33,7 @@ jupyter nbextension enable --py widgetsnbextension
 
 ## start/stop a notebook
  * from a console run ```jupyter notebook```
- * this will open up a tab in your favourite web browser, check out the [pdf]({filename}/docs/jupyter.pdf) on how to continue from here
+ * this will open up a tab in your favourite web browser, check out the [pdf]({static}/docs/jupyter.pdf) on how to continue from here
  * to stop the jupyter server you have to hit Ctrl-c
 
 ## Run jupyter on remote machine

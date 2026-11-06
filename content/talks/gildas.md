@@ -58,4 +58,4 @@ hard myimage.eps /device eps color                  ! Save your plot into a file
 
 and run in ASTRO via `@myscript.astro`, which will produce a plot like the following:
 
-![visibility]({filename}/images/visibility.png)
+![visibility]({static}/images/visibility.png)

@@ -3,7 +3,7 @@ Title: Tmux - a terminal multiplexer
 Tags: tmux
 Author: Franz Kirsten
 
- * The slides are in this [tmux.pdf]({filename}/docs/tmux.pdf)
+ * The slides are in this [tmux.pdf]({static}/docs/tmux.pdf)
  * if you know `screen`: `tmux` is a similar thing but I like it a lot more
  * [`tmux` vs `screen` cheat sheet](http://www.dayid.org/comp/tm.html)
 

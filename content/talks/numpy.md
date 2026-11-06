@@ -4,7 +4,7 @@ Tags: numpy, python, jupyter
 Author: Franz Kirsten
 
  * check out the [numpy website](https://numpy.org/) for docs and the like
- * feel free to download and play around with the [jupyter notebook on numpy]({filename}/code/numpyarrays.tar.gz)
+ * feel free to download and play around with the [jupyter notebook on numpy]({static}/code/numpyarrays.tar.gz)
 
 ## Installation
 

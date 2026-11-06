@@ -14,9 +14,9 @@ Author: Franz Kirsten
    task -- but that task they perform with great performance!
  * bash syntax can be annoying/confusing/frustrating, but you'll get the hang of it!
 ## Some tools I constantly use
- * some of the below tools I use in the script [tex2md.sh]({filename}/docs/tex2md.sh) that
+ * some of the below tools I use in the script [tex2md.sh]({static}/docs/tex2md.sh) that
    we discussed during TechTalk -- its aim is
-   to convert a table set in tex into Markdown format. 
+   to convert a table set in tex into Markdown format.
  * `grep` -- search for patterns in a file. Useful e.g. when debugging someone else's
    programme that throws an error for which you're trying to find the source code. I then
    typcally run grep 'error message' all/files/in/source/code
@@ -35,7 +35,7 @@ Author: Franz Kirsten
  * `dd` -- convert and copy files. I typically use it to cut large files into smaller ones
  * `seq` --creates a sequence of numbers. This list of numbers can increase/decrease by a
    user defined step size, output can be padded with zeros, and more
-  
+
 
 ## Parallelisation
 There is 'real' parallelisation with a tool called [mpibash](https://github.com/lanl/MPI-Bash),
@@ -97,6 +97,5 @@ the list and run through it in the following manner:
             convert $image ${image%png}jpg &
             pwait(4)
         done
-        wait            
+        wait
 ```
-

@@ -3,8 +3,8 @@ Title: Inkscape -- A powerful, free design tool
 Tags: inkscape
 Author: Stephen Bourke
 
- * Also check out the notes on [gimp]({filename}/talks/gimp.md)
- 
+ * Also check out the notes on [gimp]({static}/talks/gimp.md)
+
 ## What is it?
 ### Wikipedia
 
@@ -19,7 +19,7 @@ Author: Stephen Bourke
  * Create logos, technical drawings, block diagrams...
  * Spice up the diagrams for your publication
  * Work with and modify existing postscript or pdf files
- 
+
 ## Get it, docs, manuals
 * linux distributions like Ubuntu ship it as a package (get it via apt-get)
 * check out the [inkscape website](https://inkscape.org/) for documentation

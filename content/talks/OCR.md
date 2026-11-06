@@ -43,7 +43,7 @@ Two examples below, both were available as jpg images:
 
 #### English quote, light text on dark background
 
-![English quote]({filename}/images/english.jpg)
+![English quote]({static}/images/english.jpg)
 
 We need to reverse light and dark colours
 
@@ -54,23 +54,23 @@ We need to reverse light and dark colours
 
 which results in:
 
-> Continuing existence or cessation of   
-> existence: those are the scenarios. Is it   
-> more empowering mentally to work towards   
-> an accommodation of the downsizings and   
-> negative outcomes of adversarial   
-> circumstance, or would it be a greater   
-> enhancement of the bottom line to move   
-> forwards to a challenge to our current   
-> difficulties, and, by making a commitment   
-> to opposition, to effect their demise?   
->   
-> Tom Burton   
-> Long Words Bother Me   
+> Continuing existence or cessation of
+> existence: those are the scenarios. Is it
+> more empowering mentally to work towards
+> an accommodation of the downsizings and
+> negative outcomes of adversarial
+> circumstance, or would it be a greater
+> enhancement of the bottom line to move
+> forwards to a challenge to our current
+> difficulties, and, by making a commitment
+> to opposition, to effect their demise?
+>
+> Tom Burton
+> Long Words Bother Me
 
 #### Swedish quote
 
-![Swedish quote]({filename}/images/swedish.jpg)
+![Swedish quote]({static}/images/swedish.jpg)
 
 Here we just convert to gray scale. However, if we don't specify the
 language (`swe` in this case) we get gibberish.
@@ -81,11 +81,11 @@ language (`swe` in this case) we get gibberish.
 ```
 This produces
 
-> varit sé jﬁvla trﬁtt pa all!   
-> 53 j'zivla Hinge och nu bar   
-> jag ingen jéivla aning om   
-> hur jag kanner och vad   
-> jag Sir trim p5.   
+> varit sé jﬁvla trﬁtt pa all!
+> 53 j'zivla Hinge och nu bar
+> jag ingen jéivla aning om
+> hur jag kanner och vad
+> jag Sir trim p5.
 
 whereas
 
@@ -95,11 +95,11 @@ whereas
 ```
 produces
 
-> varit så jävla trött på allt   
-> så jävla länge och nu har   
-> jag ingen jävla aning om   
-> hur jag känner och vad   
-> jag är trött på.   
+> varit så jävla trött på allt
+> så jävla länge och nu har
+> jag ingen jävla aning om
+> hur jag känner och vad
+> jag är trött på.
 
 ### PDF files
 In order to convert pdf files, one needs (at least on Ubuntu) to

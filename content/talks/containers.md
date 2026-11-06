@@ -101,4 +101,4 @@ If you *really* need `gvim` on `hebbe` (machine at Chalmers C3SE)
     * You’re stuck with the host systems kernel module
     * Nvidia do not maintain backwards compatibility
 
-The slides are in this [pdf]({filename}/docs/sbourke_containers.pdf)
+The slides are in this [pdf]({static}/docs/sbourke_containers.pdf)

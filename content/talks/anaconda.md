@@ -4,7 +4,7 @@ Tags: anaconda, python, spyder
 Author: Magnus Persson
 
 ## The Anaconda distribution for Python
- * The slides are in this [anaconda.pdf]({filename}/docs/Anaconda.pdf)
+ * The slides are in this [anaconda.pdf]({static}/docs/Anaconda.pdf)
 
   * Anaconda is a distribution for python which
      * comes with pre-built and pre-configured collection of packages
@@ -18,4 +18,3 @@ Author: Magnus Persson
   * Separate from your system Python installation (so you don’t mess it up)
   * [Why Anaconda](https://www.continuum.io/why-anaconda)
   * [Myths and misconceptions](http://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/)
-  

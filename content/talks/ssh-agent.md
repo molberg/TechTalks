@@ -1,10 +1,10 @@
 Date: 2017-11-27
 Title: ssh-agent
-Tags: ssh, encryption 
+Tags: ssh, encryption
 Author: Stephen Bourke
 
 ##ssh-agent
- * The slides are in this [ssh-agent.pdf]({filename}/docs/sbourke_ssh_agent.pdf)
+ * The slides are in this [ssh-agent.pdf]({static}/docs/sbourke_ssh_agent.pdf)
 
 ### What is it?
  * A separate program that loads your keys and passes them to `ssh`
@@ -28,9 +28,9 @@ Good news!
 ### Encrypting your keys
  * It’s done by default
  * Can be done later:
-``` 
+```
 ssh-keygen -p -f keyfile
-``` 
+```
 ### .ssh/config
 ```
 Host *

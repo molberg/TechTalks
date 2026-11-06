@@ -41,7 +41,7 @@ git config --global user.email johndoe@example.com
 
 ## The Git work flow
 
-![work flow]({filename}/images/areas.png)
+![work flow]({static}/images/areas.png)
 
 ## Local repositories
 
