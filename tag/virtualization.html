@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - virtualization</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../virtualization-about-virtual-machines-and-containers.html"><h1>Virtualization -- About virtual machines and containers</h1></a>
+Mon 29 January 2018
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><h2>What is this about</h2>
+<p>The problems we are trying to solve:</p>
+<ul>
+<li>run software not supported by our operating system</li>
+<li>run software in well defined environments</li>
+</ul>
+<p>Assume that you are asked to deploy a web application which stores and
+retrieves data from an SQL database engine. For security, reliability
+and scalability reasons you are supposed to implement the web server,
+the database engine and your application separately on individual
+hosts. You have the following choices:</p>
+<h3>Distributed hardware</h3>
+<p><img alt="hardware" src="../images/hardware.png"></p>
+<h3>Virtual machines</h3>
+<p><img alt="virtual machines" src="../images/virtual.png"></p>
+<h3>Containers</h3>
+<p><img alt="containers" src="../images/container.png"></p>
+<h2>VirtualBox</h2>
+<h3>Wikipedia</h3>
+<blockquote>
+<p>Oracle VM VirtualBox (formerly Sun VirtualBox, Sun xVM VirtualBox
+and Innotek VirtualBox) is a free and open-source hypervisor for
+x86 computers currently being developed by Oracle
+Corporation. Developed initially by Innotek GmbH, it was acquired
+by Sun Microsystems in 2008 which was in turn acquired by Oracle
+in 2010.</p>
+<p>VirtualBox may be installed on a number of host operating systems,
+including: Linux, macOS, Windows, Solaris, and OpenSolaris.</p>
+<p>It supports the creation and management of guest virtual machines
+running versions and derivations of Windows, Linux, BSD, OS/2,
+Solaris, Haiku, OSx86 and others, and limited virtualization of
+macOS guests on Apple hardware.</p>
+<p>For some guest operating systems, a ``Guest Additions'' package of
+device drivers and system applications is available[10][11] which
+typically improves performance, especially of graphics.</p>
+</blockquote>
+<h2>Vagrant</h2>
+<h3>Wikipedia</h3>
+<blockquote>
+<p>Vagrant is an open-source software product for building and
+maintaining portable virtual software development environments,
+e.g. for VirtualBox, Hyper-V, Docker, VMware, and AWS. The core idea
+behind it lies in the fact that the environment maintenance of
+virtualizations becomes increasingly difficult in a large software
+development project. Vagrant simplifies the necessary software
+configuration management in order to increase development
+productivity. Vagrant is written in the Ruby language, but its
+ecosystem supports development in almost all major languages.</p>
+</blockquote>
+<h2>Workflow</h2>
+<p>Boxes are available at e.g. https://vagrantcloud.com/, here
+we set up a 32-bit Ubuntu 12.04 virtual machine:</p>
+<div class="highlight"><pre><span></span><code>vagrant box add hashicorp/precise32
+vagrant box list
+mkdir precise32; cd precise32
+vagrant init hashicorp/precise32
+</code></pre></div>
+
+<ul>
+<li>edit the <code>Vagrantfile</code> to suit your needs, add provisioning</li>
+<li>guest will be able to access local files via <code>/vagrant</code> !</li>
+</ul>
+<div class="highlight"><pre><span></span><code>vagrant up
+vagrant ssh
+</code></pre></div>
+
+<ul>
+<li>clean up when done:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>vagrant destroy
+vagrant box remove hashicorp/precise32
+</code></pre></div>
+
+<h2>Provisioning</h2>
+<div class="highlight"><pre><span></span><code>Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;imondino/jessie32&quot;
+  config.vm.provision :shell, :path =&gt; &quot;vm_provision/provision.sh&quot;
+  config.vm.network &quot;private_network&quot;, ip: &quot;10.0.0.10&quot;
+  config.vm.provider &quot;virtualbox&quot; do |vb|
+    vb.customize [&quot;modifyvm&quot;, :id, &quot;--cpuexecutioncap&quot;, &quot;50&quot;, &quot;--cpus&quot;, &quot;1&quot;]
+    vb.memory = 1024
+  end
+</code></pre></div>
+
+<p>and in <code>vm_provision/provision.sh</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/bash</span>
+apt-get<span class="w"> </span>update
+ln<span class="w"> </span>-sf<span class="w"> </span>/usr/share/zoneinfo/Europe/Stockholm<span class="w"> </span>/etc/localtime
+apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apache2<span class="w"> </span>apache2-utils
+service<span class="w"> </span>apache2<span class="w"> </span>restart
+...
+</code></pre></div></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/virtualization.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="../category/front-page.html">Front page</a></li>
+                <li><a href="../category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">Tech Talk</a> &copy; Michael Olberg 2018</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

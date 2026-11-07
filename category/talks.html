@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - talks</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../reproducible-and-collaborative-research.html"><h1>Reproducible and collaborative research</h1></a>
+Wed 29 May 2019
+
+by <a class="url fn" href="../author/luis-velilla-prieto.html">Luis Velilla Prieto</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><p>Notes from the
+<a href="https://coderefinery.org/workshops/2019-05-21-gothenburg/">CodeRefinery workshop in Gothenburg</a>
+which covered:</p>
+<ul>
+<li>version control (github)</li>
+<li>licenses</li>
+<li>workflow management tools (snakemake)</li>
+<li>documentation (read the docs)</li>
+<li>automated testing (pytest, travis ci)</li>
+</ul></div>
+        <hr />
+    </div>
+		
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../scripting-bifrost.html"><h2>scripting BIFROST</h2></a>
+        <div class= "well small"> Wed 15 May 2019
+
+by <a class="url fn" href="../author/luis-velilla-prieto.html">Luis Velilla Prieto</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Observing with the Onsala 20m using scripting and BIFROST</h2>
+<ul>
+<li>The following (abbreviated) script was discussed:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define/import global settings</span>
+<span class="n">SETUP</span> <span class="n">POINT</span> <span class="n">loops</span><span class="o">=</span><span class="mi">2</span> <span class="n">azdist</span><span class="o">=</span><span class="mi">21</span> <span class="n">eldist</span><span class="o">=</span><span class="mi">21</span> <span class="n">ontime</span><span class="o">=</span><span class="mi">20</span> <span class="n">caltime</span><span class="o">=</span><span class="mi">10</span> <span class="n">calwhen</span><span class="o">=</span><span class="mi">3</span> <span class="n">obsmode</span><span class="o">=</span><span class="n">ssw</span> <span class="n">dop</span><span class="o">=</span><span class="n">eachcal</span> <span class="n">adjpwr</span><span class="o">=</span><span class="n">first</span> <span class="n">rawdata</span><span class="o">=</span><span class="n">skip</span> <span class="n">addpol</span><span class="o">=</span><span class="n">save</span> <span class="n">backend</span><span class="o">=</span><span class="n">SPEa</span> <span class="n">baseline</span><span class="o">=</span><span class="n">nobaselines</span> <span class="n">startpos</span><span class="o">=</span><span class="n">last</span> <span class="n">apply …</span></code></pre></div> <a class="btn btn-info xsmall" href="../scripting-bifrost.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../the-python-c-api.html"><h2>The Python C-API</h2></a>
+        <div class= "well small"> Wed 03 April 2019
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Extending the Python Interpreter with C/C++</h2>
+<p>The Python interpreter can be extended via C (or C++) code to</p>
+<ol>
+<li>make existing python code execute faster by replacing critical
+     sections into compiled code</li>
+<li>interface to existing/legacy C (or C++) libraries</li>
+<li>make C structures (C++ classes) first class objects within python …</li></ol> <a class="btn btn-info xsmall" href="../the-python-c-api.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../observation-planning-with-gildas.html"><h2>Observation planning with gildas</h2></a>
+        <div class= "well small"> Wed 06 February 2019
+
+by <a class="url fn" href="../author/luis-velilla-prieto.html">Luis Velilla Prieto</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Context/Motivation</h2>
+<ul>
+<li>Create visibility plots to plan your observations</li>
+<li>Obtain good quality plots to be enclosed in your proposals</li>
+</ul>
+<p>Known tools:</p>
+<ul>
+<li><a href="https://www.iram.fr/IRAMFR/GILDAS/">ASTRO from the GILDAS package</a></li>
+<li><a href="https://astroplan.readthedocs.io/en/latest/">ASTROPLAN from ASTROPY</a> (not covered here)</li>
+</ul>
+<p>The best starting points for GILDAS tutorials are</p>
+<ul>
+<li><a href="http://www.iram.fr/IRAMFR/GILDAS/gildasli5.html">specific GILDAS tutorials</a></li>
+<li><a href="http://www.iram-institute.org/EN/content-page-67-7-67-0-0-0.html">upcoming and past IRAM’s events</a>
+   (select …</li></ul> <a class="btn btn-info xsmall" href="../observation-planning-with-gildas.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../some-features-of-numpy-arrays.html"><h2>Some features of numpy arrays</h2></a>
+        <div class= "well small"> Wed 06 February 2019
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>check out the <a href="https://numpy.org/">numpy website</a> for docs and the like</li>
+<li>feel free to download and play around with the <a href="../code/numpyarrays.tar.gz">jupyter notebook on numpy</a></li>
+</ul>
+<h2>Installation</h2>
+<ul>
+<li>assuming you have 'pip' installed run the following</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip install numpy
+</code></pre></div> <a class="btn btn-info xsmall" href="../some-features-of-numpy-arrays.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../selection-of-some-useful-bash-tools.html"><h2>Selection of some useful bash tools</h2></a>
+        <div class= "well small"> Wed 09 January 2019
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>Sometimes it is quicker to write a short bash script to 'get the job done' instead
+   of doing it in python or something else</li>
+<li>bash comes with a load of very useful little programmes that allow you to modify
+   files on the fly</li>
+<li>if you 'pipe' things together (with the …</li></ul> <a class="btn btn-info xsmall" href="../selection-of-some-useful-bash-tools.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../pandas.html"><h2>pandas</h2></a>
+        <div class= "well small"> Wed 12 December 2018
+
+by <a class="url fn" href="../author/chiara-ceccobello.html">Chiara Ceccobello</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>pandas: powerful Python data analysis toolkit</h2>
+<p>Useful links:</p>
+<ul>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/">pydata.org</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10 minutes to pandas</a></li>
+<li><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python">DataFrames in Python</a></li>
+</ul>
+<p>A tip: Whenever you are using <code>pandas</code> in your own code, try and stick to the following convention:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</code></pre></div>
+
+<p>This will make it easier for other people to understand your …</p> <a class="btn btn-info xsmall" href="../pandas.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../ocr-and-digitization-of-plots.html"><h2>OCR and digitization of plots</h2></a>
+        <div class= "well small"> Wed 28 November 2018
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Optical character recognition</h2>
+<p>The tool of choice on Linux and MacOS is
+<a href="https://github.com/tesseract-ocr/tesseract/wiki">tesseract</a>, an open source
+tool originally developed by HP.</p>
+<h3>Installation</h3>
+<p>On Linux (with apt package manager)</p>
+<div class="highlight"><pre><span></span><code>    sudo apt install imagemagick
+    sudo apt install tesseract-ocr
+</code></pre></div>
+
+<p>and then install individual language packages</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">apt</span><span class="o">-</span><span class="nv">cache</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="o">--</span><span class="nv">names</span><span class="o">-</span><span class="nv">only</span><span class="w"> </span><span class="nv">tesseract</span><span class="o">-</span><span class="nv">ocr</span>
+<span class="w">    </span><span class="nv">sudo …</span></code></pre></div> <a class="btn btn-info xsmall" href="../ocr-and-digitization-of-plots.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../astropy-the-python-astronomy-package.html"><h2>astropy - the python astronomy package</h2></a>
+        <div class= "well small"> Wed 14 November 2018
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>get it from <a href="http://www.astropy.org/">here</a></li>
+<li>there are a number of <a href="http://docs.astropy.org/en/stable/generated/examples/index.html">great examples</a> to get you started (the examples I showed in the seminar came from here)</li>
+<li>and further <a href="https://astropy-tutorials.readthedocs.io/en/latest/">tutorials</a></li>
+<li>also check out the astropy-page on the <a href="http://docs.astropy.org/en/stable/api/astropy.wcs.WCS.html">WCS</a></li>
+</ul>
+<h2>What it can be used for (biased, certainly not complete list)</h2>
+<ul>
+<li>reading+writing standard …</li></ul> <a class="btn btn-info xsmall" href="../astropy-the-python-astronomy-package.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../writing-r-extensions.html"><h2>Writing R extensions</h2></a>
+        <div class= "well small"> Mon 16 April 2018
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Overview</h2>
+<ul>
+<li>R makes it easy to use legacy C and Fortran code</li>
+<li>comes with beautiful graphics and powerful statistical tools</li>
+<li>
+<blockquote>
+<p>10000 packages on <a href="https://cran.r-project.org/">CRAN</a></p>
+</blockquote>
+</li>
+<li>packages follow high standards for documentation</li>
+<li>think of R as python with built-in matplotlib and pandas</li>
+</ul>
+<p>Take this simple Fortran subroutine:</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="n">subroutine</span><span class="w"> </span><span class="n">facto</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">answer</span><span class="p">)</span>
+<span class="n">C …</span></code></pre></div> <a class="btn btn-info xsmall" href="../writing-r-extensions.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../emacs.html"><h2>Emacs</h2></a>
+        <div class= "well small"> Wed 04 April 2018
+
+by <a class="url fn" href="../author/michael-olberg-and-franz-kirsten.html">Michael Olberg and Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><h1>Emacs</h1>
+<p>A short introduction to <code>emacs</code> given as part of the tech talk series.</p>
+<blockquote>
+<p>"Emacs outshines all other editing software in approximately the same
+way that the noonday sun does the stars. It is not just bigger and
+brighter; it simply makes everything else vanish." -Neal Stephenson,
+"In the Beginning …</p></blockquote> <a class="btn btn-info xsmall" href="../emacs.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../coding-in-python-in-a-jupyter-notebook.html"><h2>Coding in python in a Jupyter Notebook</h2></a>
+        <div class= "well small"> Thu 22 March 2018
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>I made some slides showing how to <a href="../docs/jupyter.pdf">get started</a></li>
+<li>check out the <a href="https://jupyter.org/">jupyter website</a> for docs and the like</li>
+<li>for further info on the jupyter extensions check out <a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions">their github page</a></li>
+<li>feel free to download and play around with the <a href="../code/jupyter.tar.gz">notebook we worked on</a>; (tarball contains both the notebook and …</li></ul> <a class="btn btn-info xsmall" href="../coding-in-python-in-a-jupyter-notebook.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../anaconda.html"><h2>Anaconda</h2></a>
+        <div class= "well small"> Thu 15 March 2018
+
+by <a class="url fn" href="../author/magnus-persson.html">Magnus Persson</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>The Anaconda distribution for Python</h2>
+<ul>
+<li>
+<p>The slides are in this <a href="../docs/Anaconda.pdf">anaconda.pdf</a></p>
+</li>
+<li>
+<p>Anaconda is a distribution for python which</p>
+<ul>
+<li>comes with pre-built and pre-configured collection of packages</li>
+<li>package manager (<code>conda</code>)</li>
+<li>version management</li>
+<li>... and more</li>
+</ul>
+</li>
+<li>
+<p>Freemium software from Continuum Analytics</p>
+</li>
+<li>Works basically the same on Win, Mac and Linux</li>
+<li>Self-contained, install …</li></ul> <a class="btn btn-info xsmall" href="../anaconda.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../emacs-org-mode.html"><h2>Emacs org-mode</h2></a>
+        <div class= "well small"> Thu 01 March 2018
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h1>Org mode</h1>
+<p>Here is the document I presented, with some comments and keyboard
+shortcuts added: (S stands for Shift, C stands for Ctrl, M stands for
+meta (either Esc or Alt). For example <code>M-g</code> would mean, press the Esc
+key first then press the g key, alternatively press Alt and …</p> <a class="btn btn-info xsmall" href="../emacs-org-mode.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../containers.html"><h2>Containers</h2></a>
+        <div class= "well small"> Thu 22 February 2018
+
+by <a class="url fn" href="../author/stephen-bourke.html">Stephen Bourke</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>What is a container?</h2>
+<ul>
+<li>It’s a file system image (eg. tar archive) that gets used instead
+   of the local file system</li>
+<li>An application to set things up (eg. singularity, docker)</li>
+<li>When you run an application via a container that application is
+   isolated from the rest of the OS</li>
+<li>Made …</li></ul> <a class="btn btn-info xsmall" href="../containers.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../rsync-and-cron-jobs.html"><h2>Rsync and Cron jobs</h2></a>
+        <div class= "well small"> Wed 21 February 2018
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>The slides I showed are in this <a href="../docs/rsync-cronjobs.pdf">rsync-cronjobs.pdf</a></li>
+<li>in a nutshell <code>rsync</code> is a fancy way to copy data</li>
+<li>instead of copying everything it will syncronise source and sinc by
+   comparing time tags and/or sizes of files</li>
+<li>can be used like <code>scp</code> to sync different machines in a …</li></ul> <a class="btn btn-info xsmall" href="../rsync-and-cron-jobs.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../gimp-the-gnu-image-manipulation-program.html"><h2>Gimp -- The GNU Image Manipulation program</h2></a>
+        <div class= "well small"> Mon 29 January 2018
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>The slides are in this <a href="../docs/gimp.pdf">gimp.pdf</a></li>
+<li>Also check out the notes on <a href="../inkscape-a-powerful-free-design-tool.html">inkscape</a></li>
+</ul>
+<h2>What is it?</h2>
+<h3>Wikipedia</h3>
+<blockquote>
+<p>(GNU Image Manipulation Program) is a free and open-source raster
+graphics editor used for image retouching and editing,
+free-form drawing, converting between different image formats,
+and more specialized tasks.</p>
+</blockquote>
+<h2>Gimp - what I …</h2> <a class="btn btn-info xsmall" href="../gimp-the-gnu-image-manipulation-program.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../inkscape-a-powerful-free-design-tool.html"><h2>Inkscape -- A powerful, free design tool</h2></a>
+        <div class= "well small"> Mon 29 January 2018
+
+by <a class="url fn" href="../author/stephen-bourke.html">Stephen Bourke</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>Also check out the notes on <a href="../gimp-the-gnu-image-manipulation-program.html">gimp</a></li>
+</ul>
+<h2>What is it?</h2>
+<h3>Wikipedia</h3>
+<blockquote>
+<p>Inkscape is a free and open-source vector graphics editor; it can be
+used to create or edit vector graphics such as illustrations,
+diagrams, line arts, charts, logos and complex paintings. Inkscape's
+primary vector graphics format is Scalable Vector Graphics …</p></blockquote> <a class="btn btn-info xsmall" href="../inkscape-a-powerful-free-design-tool.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../virtualization-about-virtual-machines-and-containers.html"><h2>Virtualization -- About virtual machines and containers</h2></a>
+        <div class= "well small"> Mon 29 January 2018
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>What is this about</h2>
+<p>The problems we are trying to solve:</p>
+<ul>
+<li>run software not supported by our operating system</li>
+<li>run software in well defined environments</li>
+</ul>
+<p>Assume that you are asked to deploy a web application which stores and
+retrieves data from an SQL database engine. For security, reliability
+and scalability …</p> <a class="btn btn-info xsmall" href="../virtualization-about-virtual-machines-and-containers.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../tmux-a-terminal-multiplexer.html"><h2>Tmux - a terminal multiplexer</h2></a>
+        <div class= "well small"> Mon 15 January 2018
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul>
+<li>The slides are in this <a href="../docs/tmux.pdf">tmux.pdf</a></li>
+<li>if you know <code>screen</code>: <code>tmux</code> is a similar thing but I like it a lot more</li>
+<li><a href="http://www.dayid.org/comp/tm.html"><code>tmux</code> vs <code>screen</code> cheat sheet</a></li>
+</ul>
+<h2>What is it?</h2>
+<h3>Wikipedia</h3>
+<blockquote>
+<p><code>tmux</code> is a software application that can be used to multiplex several
+virtual consoles, allowing a user to …</p></blockquote> <a class="btn btn-info xsmall" href="../tmux-a-terminal-multiplexer.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../git-version-control-system.html"><h2>Git version control system</h2></a>
+        <div class= "well small"> Mon 11 December 2017
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>The Abomination</h2>
+<div class="highlight"><pre><span></span><code>foo.txt
+foo1.txt
+foo1_john.txt
+foo2_jane_feb12.txt
+foo2_jane_feb12_with_additional_comments_by_john.txt
+</code></pre></div>
+
+<p><strong>Please. don't. do. this!</strong></p>
+<h2>History</h2>
+<p>The competition</p>
+<ul>
+<li><code>rcs</code> revision control system</li>
+<li><code>cvs</code> concurrent versions system</li>
+<li><code>svn</code> subversion</li>
+<li><code>hg</code> mercurial</li>
+</ul>
+<p>... and the winner is:</p>
+<ul>
+<li><code>git</code> developed in 2005 by Linus Torvalds, used for the
+    development of the Linux kernel …</li></ul> <a class="btn btn-info xsmall" href="../git-version-control-system.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../lyx.html"><h2>Lyx</h2></a>
+        <div class= "well small"> Mon 04 December 2017
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Lyx - document editor based on latex</h2>
+<h3>Overview</h3>
+<ul>
+<li>encourages writing based on the idea of what-you-see-is-what-you-mean <a href="http://en.wikipedia.org/wiki/WYSIWYM">WYSIWYM</a></li>
+<li>find it at <a href="http://www.lyx.org/">Lyx</a></li>
+<li>the <a href="https://wiki.lyx.org/">Documentation/Wiki</a> is great</li>
+<li>allows you to write a LaTeX document without ever having to remember latex-commands</li>
+</ul>
+<h3>Features</h3>
+<ul>
+<li>import of LaTeX files</li>
+<li>export of Lyx-files to LaTeX</li>
+<li>vast amount …</li></ul> <a class="btn btn-info xsmall" href="../lyx.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../overleaf.html"><h2>Overleaf</h2></a>
+        <div class= "well small"> Mon 04 December 2017
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Overleaf - collaborative Writing and Publishing</h2>
+<h3>Overview</h3>
+<ul>
+<li>a merge between former <code>WriteLaTeX</code> and <code>ShareLaTeX</code></li>
+<li>find it at <a href="https://www.overleaf.com/">Overleaf</a></li>
+<li>watch the introductory movie and follow the tutorial, by clicking
+    on the ``?'' in the toolbar.</li>
+</ul>
+<h3>Features</h3>
+<ul>
+<li>platform for collaboration on LaTeX documents</li>
+<li>comfortable editor with template completion</li>
+<li>version control with powerful comparison feature …</li></ul> <a class="btn btn-info xsmall" href="../overleaf.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../ssh-agent.html"><h2>ssh-agent</h2></a>
+        <div class= "well small"> Mon 27 November 2017
+
+by <a class="url fn" href="../author/stephen-bourke.html">Stephen Bourke</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>ssh-agent</h2>
+<ul>
+<li>The slides are in this <a href="../docs/sbourke_ssh_agent.pdf">ssh-agent.pdf</a></li>
+</ul>
+<h3>What is it?</h3>
+<ul>
+<li>A separate program that loads your keys and passes them to <code>ssh</code></li>
+<li><code>ssh</code> will see if <code>ssh-agent</code> is running and if so will ask it for your keys</li>
+</ul>
+<h3>What's the point?</h3>
+<ul>
+<li>To decrypt your keys temporarily</li>
+<li>Stores them in …</li></ul> <a class="btn btn-info xsmall" href="../ssh-agent.html">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../using-ssh-and-friends.html"><h2>Using ssh and friends</h2></a>
+        <div class= "well small"> Mon 20 November 2017
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>Using ssh and friends</h2>
+<ul>
+<li>The slides are in this <a href="../docs/ssh.pdf">ssh.pdf</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># we spoke about the following tools:</span>
+<span class="n">ssh</span><span class="w">          </span><span class="c1"># utility to access remote machine</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span><span class="w">   </span><span class="c1"># used to generate key-pairs (to access machines without a password)</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="n">id</span><span class="w">  </span><span class="c1"># to copy the public key to the remote machine</span>
+<span class="n">scp</span><span class="w">          </span><span class="c1"># &#39;secure copy …</span></code></pre></div> <a class="btn btn-info xsmall" href="../using-ssh-and-friends.html">read more</a></div>
+    </div>	
+				
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../category/talks.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="../category/front-page.html">Front page</a></li>
+                <li><a href="../category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">Tech Talk</a> &copy; Michael Olberg 2019</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

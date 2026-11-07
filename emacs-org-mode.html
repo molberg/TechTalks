@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - Emacs org-mode</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="./theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./theme/bootstrap.min.css" rel="stylesheet">
+    <link href="./theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="./theme/local.css" rel="stylesheet">
+    <link href="./theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href=".">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="./pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Emacs org-mode</h1>
+Thu 01 March 2018
+
+by <a class="url fn" href="./author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+        </div>
+	
+        <div><h1>Org mode</h1>
+<p>Here is the document I presented, with some comments and keyboard
+shortcuts added: (S stands for Shift, C stands for Ctrl, M stands for
+meta (either Esc or Alt). For example <code>M-g</code> would mean, press the Esc
+key first then press the g key, alternatively press Alt and g
+simultaneously.</p>
+<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="w"> </span><span class="n">Org</span><span class="w"> </span><span class="n">mode</span>
+<span class="w">    </span><span class="n">Lorem</span><span class="w"> </span><span class="n">ipsum</span><span class="w"> </span><span class="n">dolor</span><span class="w"> </span><span class="n">sit</span><span class="w"> </span><span class="n">amet</span><span class="p">,</span><span class="w"> </span><span class="n">consectetur</span><span class="w"> </span><span class="n">adipiscing</span><span class="w"> </span><span class="n">elit</span><span class="p">,</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="n">eiusmod</span><span class="w"> </span><span class="n">tempor</span><span class="w"> </span><span class="n">incididunt</span><span class="w"> </span><span class="n">ut</span><span class="w"> </span><span class="n">labore</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">dolore</span><span class="w"> </span><span class="n">magna</span><span class="w"> </span><span class="n">aliqua</span><span class="p">.</span><span class="w"> </span><span class="n">Ut</span>
+<span class="w">    </span><span class="n">enim</span><span class="w"> </span><span class="n">ad</span><span class="w"> </span><span class="n">minim</span><span class="w"> </span><span class="n">veniam</span><span class="p">,</span><span class="w"> </span><span class="n">quis</span><span class="w"> </span><span class="n">nostrud</span><span class="w"> </span><span class="n">exercitation</span><span class="w"> </span><span class="n">ullamco</span><span class="w"> </span><span class="n">laboris</span>
+<span class="w">    </span><span class="n">nisi</span><span class="w"> </span><span class="n">ut</span><span class="w"> </span><span class="n">aliquip</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="n">ea</span><span class="w"> </span><span class="n">commodo</span><span class="w"> </span><span class="n">consequat</span><span class="p">.</span><span class="w"> </span><span class="n">Duis</span><span class="w"> </span><span class="n">aute</span><span class="w"> </span><span class="n">irure</span><span class="w"> </span><span class="n">dolor</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="n">reprehenderit</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">voluptate</span><span class="w"> </span><span class="n">velit</span><span class="w"> </span><span class="n">esse</span><span class="w"> </span><span class="n">cillum</span><span class="w"> </span><span class="n">dolore</span><span class="w"> </span><span class="n">eu</span><span class="w"> </span><span class="n">fugiat</span>
+<span class="w">    </span><span class="n">nulla</span><span class="w"> </span><span class="n">pariatur</span><span class="p">.</span><span class="w"> </span><span class="n">Excepteur</span><span class="w"> </span><span class="n">sint</span><span class="w"> </span><span class="n">occaecat</span><span class="w"> </span><span class="n">cupidatat</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">proident</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sunt</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">culpa</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">officia</span><span class="w"> </span><span class="n">deserunt</span><span class="w"> </span><span class="n">mollit</span><span class="w"> </span><span class="n">anim</span><span class="w"> </span><span class="kt">id</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">laborum</span><span class="p">.</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">    </span><span class="n">M</span><span class="o">-</span><span class="n">q</span><span class="w"> </span><span class="n">reformats</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">paragraph</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">org</span><span class="o">-</span><span class="n">mode</span><span class="w"> </span><span class="n">specific</span><span class="p">.</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">Markup</span><span class="w"> </span>
+<span class="o">*</span><span class="n">bold</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">italics</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="o">=</span><span class="n">verbatim</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="n">strikethrough</span><span class="o">+</span><span class="p">,</span><span class="w"> </span><span class="o">~</span><span class="n">code</span><span class="o">~</span>
+<span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">bulleted</span><span class="w"> </span><span class="n">items</span>
+<span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">one</span>
+<span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">tick</span><span class="w"> </span><span class="n">marks</span>
+<span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">cycle</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">types</span>
+<span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="n">box</span>
+<span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="n">automatic</span><span class="w"> </span><span class="n">renumbering</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">RET</span><span class="w"> </span><span class="n">insert</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">heading</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">depending</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">cursor</span><span class="w"> </span><span class="n">is</span><span class="p">.</span><span class="w"> </span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">S</span><span class="o">-</span><span class="n">RET</span><span class="w"> </span><span class="n">inserts</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="w"> </span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">toggles</span><span class="w"> </span><span class="n">tick</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="n">box</span><span class="p">.</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">up</span><span class="o">/</span><span class="n">down</span><span class="w"> </span><span class="n">rearrange</span><span class="w"> </span><span class="n">items</span><span class="o">/</span><span class="n">headings</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">left</span><span class="o">/</span><span class="n">right</span><span class="w"> </span><span class="n">decrease</span><span class="o">/</span><span class="n">increase</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">heading</span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">toggle</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">bullets</span><span class="p">,</span><span class="w"> </span><span class="n">unnumbered</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">numbered</span><span class="p">.</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">To</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">items</span>
+<span class="n">By</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">states</span><span class="o">:</span><span class="w"> </span><span class="n">TODO</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">DONE</span><span class="p">.</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">five</span><span class="w"> </span><span class="n">states</span><span class="p">,</span><span class="w"> </span>
+<span class="n">the</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">shown</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">green</span>
+<span class="cp">#+TODO: TODO FEEDBACK VERIFY | DONE CANCELED</span>
+<span class="o">***</span><span class="w"> </span><span class="n">TODO</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">this</span><span class="w"> </span>
+<span class="w">     </span><span class="nl">DEADLINE</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">2022-08-28</span><span class="w"> </span><span class="n">Sun</span><span class="o">&gt;</span>
+<span class="p">...</span><span class="n">and</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">deadline</span>
+<span class="o">***</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">done</span>
+<span class="n">Set</span><span class="w"> </span><span class="o">=</span><span class="n">org</span><span class="o">-</span><span class="n">log</span><span class="o">-</span><span class="n">done</span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="n">time</span><span class="o">=</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">happens</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">item</span><span class="p">.</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">toggle</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">states</span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">deadline</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">up</span><span class="o">/</span><span class="n">down</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">increase</span><span class="o">/</span><span class="n">decrease</span><span class="w"> </span><span class="n">year</span><span class="o">/</span><span class="n">month</span><span class="o">/</span><span class="n">day</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">one</span><span class="p">.</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">Tags</span><span class="w">                                    </span><span class="o">:</span><span class="n">work</span><span class="o">:</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Let</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">this</span><span class="w"> </span>
+<span class="cp">#+TAGS: work(w) home(h)</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">q</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">tag</span><span class="p">,</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">#</span><span class="o">+</span><span class="n">TAGS</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">able</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">abbreviations</span><span class="p">,</span><span class="w"> </span><span class="n">here</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">h</span><span class="p">,</span>
+<span class="w">   </span><span class="n">Else</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">spell</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">tag</span><span class="p">.</span>
+<span class="o">**</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="n">Priorities</span>
+<span class="cp">#+PRIORITIES: 1 7 4</span>
+<span class="w"> </span><span class="n">headings</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">priorities</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">C</span>
+
+<span class="w"> </span><span class="n">S</span><span class="o">-</span><span class="n">up</span><span class="o">/</span><span class="n">down</span><span class="w"> </span><span class="n">increase</span><span class="o">/</span><span class="n">decrease</span><span class="w"> </span><span class="n">priority</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">Links</span>
+<span class="n">You</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">sites</span><span class="w"> </span><span class="p">[[</span><span class="n">https</span><span class="o">:</span><span class="c1">//orgmode.org][Org mode]], files [[../ubuntu-trusty-14.04.png][Trusty]], etc.</span>
+
+<span class="n">Set</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="p">[[</span><span class="n">Export</span><span class="p">]]</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="n">below</span><span class="p">.</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">Tables</span>
+<span class="o">|</span><span class="w"> </span><span class="n">target</span><span class="w">      </span><span class="o">|</span><span class="w">          </span><span class="n">RA</span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="n">Dec</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Vlsr</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|-------------+-------------+--------------+------|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-14</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mf">09.55</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-33</span><span class="o">:</span><span class="mi">25</span><span class="o">:</span><span class="mf">45.69</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-10</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">42</span><span class="o">:</span><span class="mf">55.51</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mf">31.72</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-6</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mf">34.77</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mf">25.42</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-9</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">38</span><span class="o">:</span><span class="mf">31.20</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-35</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mf">08.78</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-11</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">45</span><span class="o">:</span><span class="mf">57.70</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">29</span><span class="o">:</span><span class="mf">43.68</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-12</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">38</span><span class="o">:</span><span class="mf">38.38</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-35</span><span class="o">:</span><span class="mo">02</span><span class="o">:</span><span class="mf">21.93</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-13</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mf">27.78</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-35</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mf">08.22</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-15</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">45</span><span class="o">:</span><span class="mf">13.14</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mf">30.98</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-53</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mf">36.09</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">35.12</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-16</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">45</span><span class="o">:</span><span class="mf">18.10</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">12</span><span class="o">:</span><span class="mf">36.79</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-17</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">42</span><span class="o">:</span><span class="mf">15.54</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-33</span><span class="o">:</span><span class="mi">46</span><span class="o">:</span><span class="mf">15.25</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-18</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">43</span><span class="o">:</span><span class="mf">17.48</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mf">47.25</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-19</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">43</span><span class="o">:</span><span class="mf">54.91</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mo">06</span><span class="o">:</span><span class="mf">11.59</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-73</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">42</span><span class="o">:</span><span class="mf">53.94</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-33</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mf">01.73</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-184</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mf">03.11</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">41</span><span class="o">:</span><span class="mf">33.93</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-40</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mf">46.65</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-33</span><span class="o">:</span><span class="mi">43</span><span class="o">:</span><span class="mf">17.88</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-72</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">38</span><span class="o">:</span><span class="mf">46.93</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-33</span><span class="o">:</span><span class="mi">23</span><span class="o">:</span><span class="mf">36.38</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-213</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mf">24.88</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mf">29.12</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-240</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">42</span><span class="o">:</span><span class="mf">42.63</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mf">31.28</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-244</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mf">14.04</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">36</span><span class="o">:</span><span class="mf">23.21</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Az</span><span class="o">-</span><span class="n">lup1</span><span class="mi">-254</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">43</span><span class="o">:</span><span class="mf">08.55</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mo">03</span><span class="o">:</span><span class="mf">53.07</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Merin11</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">43</span><span class="o">:</span><span class="mf">02.29</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">-34</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mf">06.2</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">GWLup</span><span class="w">       </span><span class="o">|</span><span class="w">  </span><span class="mi">15</span><span class="o">:</span><span class="mi">46</span><span class="o">:</span><span class="mf">44.6</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">30</span><span class="o">:</span><span class="mf">35.64</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Sz65</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="mi">15</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mf">27.78</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">-34</span><span class="o">:</span><span class="mi">46</span><span class="o">:</span><span class="mf">17.4</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">J154506</span><span class="w">     </span><span class="o">|</span><span class="w">  </span><span class="mi">15</span><span class="o">:</span><span class="mi">45</span><span class="o">:</span><span class="mf">06.2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-34</span><span class="o">:</span><span class="mi">17</span><span class="o">:</span><span class="mf">38.04</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">GQLup</span><span class="w">       </span><span class="o">|</span><span class="w">  </span><span class="mi">15</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mf">12.2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">-35</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mf">03.96</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Sz66</span><span class="w">        </span><span class="o">|</span><span class="w">  </span><span class="mi">15</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mf">28.3</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">-34</span><span class="o">:</span><span class="mi">46</span><span class="o">:</span><span class="mf">18.3</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Sz73</span><span class="w">        </span><span class="o">|</span><span class="w">  </span><span class="mi">15</span><span class="o">:</span><span class="mi">47</span><span class="o">:</span><span class="mf">56.9</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">-35</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="mf">34.7</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mf">5.0</span><span class="w"> </span><span class="o">|</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">   </span><span class="n">Mark</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">C</span><span class="o">-|</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">translate</span><span class="w"> </span><span class="n">comma</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">tab</span><span class="w"> </span><span class="n">separated</span><span class="w"> </span><span class="n">data</span><span class="p">.</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">up</span><span class="o">/</span><span class="n">down</span><span class="o">/</span><span class="n">righ</span><span class="o">/</span><span class="n">left</span><span class="w"> </span><span class="n">reorder</span><span class="w"> </span><span class="n">rows</span><span class="o">/</span><span class="n">columns</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">S</span><span class="o">-</span><span class="n">right</span><span class="w"> </span><span class="n">insert</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">column</span>
+<span class="w">   </span><span class="n">M</span><span class="o">-</span><span class="n">S</span><span class="o">-</span><span class="n">left</span><span class="w"> </span><span class="n">delete</span><span class="w"> </span><span class="n">column</span>
+<span class="w">   </span><span class="n">TAB</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">re</span><span class="o">-</span><span class="n">align</span><span class="w"> </span><span class="n">things</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">needed</span>
+<span class="w">   </span><span class="o">|-</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">itself</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">separator</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="n">TAB</span><span class="p">,</span>
+<span class="w">   </span><span class="n">see</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">above</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">snippets</span>
+<span class="n">Configure</span><span class="w"> </span><span class="o">=</span><span class="n">org</span><span class="o">-</span><span class="n">confirm</span><span class="o">-</span><span class="n">babel</span><span class="o">-</span><span class="n">evaluate</span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="n">prompt</span><span class="p">.</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">execute</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">snippet</span><span class="p">.</span><span class="w"> </span><span class="n">Something</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">didn</span><span class="err">&#39;</span><span class="n">t</span><span class="w"> </span><span class="n">show</span><span class="p">,</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="n">C</span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span>
+<span class="w">   </span><span class="n">emacs</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">extra</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">snippet</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">proper</span><span class="w"> </span><span class="n">mode</span><span class="p">.</span>
+
+<span class="cp">#+BEGIN_SRC shell</span>
+<span class="n">ls</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="n">org</span>
+<span class="cp">#+END_SRC</span>
+
+<span class="cp">#+RESULTS:</span>
+<span class="o">:</span><span class="w"> </span><span class="n">orgmode</span><span class="p">.</span><span class="n">org</span>
+
+<span class="n">Python</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">needs</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="o">=:</span><span class="n">results</span><span class="w"> </span><span class="n">output</span><span class="o">=</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">print</span><span class="w"> </span><span class="n">statements</span><span class="p">.</span>
+
+<span class="cp">#+BEGIN_SRC python :results output</span>
+<span class="w">  </span><span class="n">import</span><span class="w"> </span><span class="n">math</span>
+
+<span class="w">  </span><span class="n">def</span><span class="w"> </span><span class="n">myfun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">.</span><span class="n">pi</span>
+<span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">  </span><span class="n">print</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>
+<span class="cp">#+END_SRC</span>
+
+<span class="cp">#+RESULTS:</span>
+<span class="o">:</span><span class="w"> </span><span class="mf">3.14159265359</span><span class="w"> </span><span class="mf">-1.0</span>
+
+<span class="n">Example</span><span class="w"> </span><span class="n">producing</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">file</span>
+
+<span class="cp">#+BEGIN_SRC mscgen :file mydiagram.png</span>
+<span class="n">msc</span><span class="w"> </span><span class="p">{</span>
+<span class="cp"># hscale=&quot;1.5&quot;;</span>
+
+<span class="n">ScpiRequest</span><span class="p">,</span><span class="n">SEPIA</span><span class="p">,</span><span class="n">controller</span><span class="p">;</span>
+<span class="w"> </span><span class="o">|||</span><span class="p">;</span>
+<span class="o">---</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;APECS query arrives&quot;</span><span class="p">];</span>
+<span class="n">ScpiRequest</span><span class="o">&lt;=</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;property(key, cmd)&quot;</span><span class="p">];</span>
+
+<span class="o">---</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;APECS query done&quot;</span><span class="p">];</span>
+<span class="w"> </span><span class="o">|||</span><span class="p">;</span>
+
+<span class="o">---</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;APECS update request arrives&quot;</span><span class="p">];</span>
+<span class="n">ScpiRequest</span><span class="o">=&gt;</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;updateProperty(key, value)&quot;</span><span class="p">];</span>
+
+<span class="o">---</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;APECS update request done&quot;</span><span class="p">];</span>
+<span class="w"> </span><span class="o">|||</span><span class="p">;</span>
+
+<span class="o">---</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;APECS tune request arrives&quot;</span><span class="p">];</span>
+
+<span class="n">ScpiRequest</span><span class="o">-&gt;</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;startExec&quot;</span><span class="p">];</span>
+<span class="n">SEPIA</span><span class="o">-&gt;</span><span class="n">controller</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;tuningRequest(f)&quot;</span><span class="p">];</span>
+<span class="n">controller</span><span class="o">=&gt;</span><span class="n">controller</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;tuneLO(f)&quot;</span><span class="p">];</span>
+<span class="cp"># controller note controller [label=&quot;a note\nanother line\nsecond line&quot;];</span>
+<span class="n">controller</span><span class="o">-&gt;</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;LOtuned(ok)&quot;</span><span class="p">];</span>
+<span class="n">controller</span><span class="o">=&gt;</span><span class="n">controller</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;tuneMixer(POL0)&quot;</span><span class="p">];</span>
+<span class="n">controller</span><span class="o">-&gt;</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;mixerTuned(POL0, ok)&quot;</span><span class="p">];</span>
+<span class="n">controller</span><span class="o">=&gt;</span><span class="n">controller</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;tuneMixer(POL1)&quot;</span><span class="p">];</span>
+<span class="n">controller</span><span class="o">-&gt;</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;mixerTuned(POL1, ok)&quot;</span><span class="p">];</span>
+<span class="n">controller</span><span class="o">-&gt;</span><span class="n">SEPIA</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;systemTuned(bool)&quot;</span><span class="p">];</span>
+<span class="n">SEPIA</span><span class="o">=&gt;</span><span class="n">ScpiRequest</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;tuningFinished.wakeAll()&quot;</span><span class="p">];</span>
+
+<span class="o">---</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;APECS tune request done&quot;</span><span class="p">];</span>
+
+<span class="p">}</span>
+<span class="cp">#+END_SRC</span>
+
+<span class="cp">#+RESULTS:</span>
+<span class="p">[[</span><span class="n">file</span><span class="o">:</span><span class="n">mydiagram</span><span class="p">.</span><span class="n">png</span><span class="p">]]</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">Export</span>
+<span class="n">Fine</span><span class="w"> </span><span class="n">tune</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">exported</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="n">data</span>
+
+<span class="cp">#+TITLE: A short introduction to Org-mode</span>
+<span class="cp">#+AUTHOR: Karl Jansky</span>
+<span class="cp">#+EMAIL:  michael.olberg@chalmers.se</span>
+<span class="cp">#+OPTIONS: toc:nil</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">HTML</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">LaTex</span><span class="w"> </span><span class="p">(</span><span class="n">and</span><span class="w"> </span><span class="n">further</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">pdf</span><span class="p">)</span>
+
+<span class="nl">shortcuts</span><span class="p">:</span>
+<span class="w">   </span><span class="n">C</span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">C</span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">options</span><span class="p">.</span>
+
+<span class="o">**</span><span class="w"> </span><span class="n">LaTeX</span><span class="w"> </span><span class="n">integration</span>
+<span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">my</span><span class="w"> </span><span class="n">formula</span><span class="w"> </span><span class="err">\</span><span class="n">alpha</span><span class="w"> </span><span class="err">\</span><span class="n">rightarrow</span><span class="w"> </span><span class="err">\</span><span class="n">beta</span>
+</code></pre></div></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="./archives.html">Archives</a>
+                <li><a href="./tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="./category/front-page.html">Front page</a></li>
+                <li><a href="./category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href=".">Tech Talk</a> &copy; Michael Olberg 2019</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="./theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

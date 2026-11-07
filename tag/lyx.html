@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - lyx</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../lyx.html"><h1>Lyx</h1></a>
+Mon 04 December 2017
+
+by <a class="url fn" href="../author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><h2>Lyx - document editor based on latex</h2>
+<h3>Overview</h3>
+<ul>
+<li>encourages writing based on the idea of what-you-see-is-what-you-mean <a href="http://en.wikipedia.org/wiki/WYSIWYM">WYSIWYM</a></li>
+<li>find it at <a href="http://www.lyx.org/">Lyx</a></li>
+<li>the <a href="https://wiki.lyx.org/">Documentation/Wiki</a> is great</li>
+<li>allows you to write a LaTeX document without ever having to remember latex-commands</li>
+</ul>
+<h3>Features</h3>
+<ul>
+<li>import of LaTeX files</li>
+<li>export of Lyx-files to LaTeX</li>
+<li>vast amount of document classes</li>
+<li>renders your input immediately (e.g. mathmatical symbols apear as such)</li>
+<li>implement your own classes (e.g. A&amp;A, MNRAS, ApJ...)</li>
+<li>can be used in conjunction with <a href="../overleaf.html">Overleaf</a></li>
+</ul>
+<h3>Example of how to implement a class</h3>
+<ul>
+<li>the below works on Ubuntu</li>
+<li>open a terminal and run the following commands (replace class.cls by your class-file)</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cp /path/to/class.cls /usr/local/share/texmf/tex/latex/ # might need to create the directory first
+chmod 655 /usr/local/share/texmf/tex/latex/class.cls    # makes the file readable
+sudo texhash                                            # texhash needs to be run as root, hence sudo
+</code></pre></div>
+
+<ul>
+<li>after these steps start lyx, in the menu go to tools --&gt; reconfigure</li>
+<li>restart lyx</li>
+</ul></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/lyx.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="../category/front-page.html">Front page</a></li>
+                <li><a href="../category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">Tech Talk</a> &copy; Michael Olberg 2017</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

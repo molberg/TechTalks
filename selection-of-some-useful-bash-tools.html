@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - Selection of some useful bash tools</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="./theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./theme/bootstrap.min.css" rel="stylesheet">
+    <link href="./theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="./theme/local.css" rel="stylesheet">
+    <link href="./theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href=".">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="./pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Selection of some useful bash tools</h1>
+Wed 09 January 2019
+
+by <a class="url fn" href="./author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+        </div>
+	
+        <div><ul>
+<li>Sometimes it is quicker to write a short bash script to 'get the job done' instead
+   of doing it in python or something else</li>
+<li>bash comes with a load of very useful little programmes that allow you to modify
+   files on the fly</li>
+<li>if you 'pipe' things together (with the <code>|</code> operator), i.e. send the output of one
+   programme as input to the
+   next, you can create a complex chain of task as a one-liner</li>
+<li>the phylosophy behind the bash-tools is that they are designed to perform only one
+   task -- but that task they perform with great performance!</li>
+<li>bash syntax can be annoying/confusing/frustrating, but you'll get the hang of it!</li>
+</ul>
+<h2>Some tools I constantly use</h2>
+<ul>
+<li>some of the below tools I use in the script <a href="./docs/tex2md.sh">tex2md.sh</a> that
+   we discussed during TechTalk -- its aim is
+   to convert a table set in tex into Markdown format.</li>
+<li><code>grep</code> -- search for patterns in a file. Useful e.g. when debugging someone else's
+   programme that throws an error for which you're trying to find the source code. I then
+   typcally run grep 'error message' all/files/in/source/code</li>
+<li><code>sed</code> -- string editor. Extremely useful if you want to modify the same string in a large
+   bunch of files.</li>
+<li><code>awk</code> -- actually a programming language. Extremely powerful to parse text files, do
+   computations on the content of those files, modify the files content and/or write the
+   results to a new file -- plus much more!</li>
+<li><code>let</code> -- a utility to create an integer counter if needed, e.g.:
+   <code>b=3;
+        let b=$b+1 # increments b by one</code></li>
+<li><code>cut</code> -- parse files column wise</li>
+<li><code>paste</code> -- merge files line by line (i.e. combine two files as columns</li>
+<li><code>dd</code> -- convert and copy files. I typically use it to cut large files into smaller ones</li>
+<li><code>seq</code> --creates a sequence of numbers. This list of numbers can increase/decrease by a
+   user defined step size, output can be padded with zeros, and more</li>
+</ul>
+<h2>Parallelisation</h2>
+<p>There is 'real' parallelisation with a tool called <a href="https://github.com/lanl/MPI-Bash">mpibash</a>,
+but for most bash-related
+tasks it's overkill. I typically parallelise things that are 'embarringly parallel', i.e. I
+perform one and the same task over and over again. An example of this would be the
+conversion of a bunch of images from, say, png to jpg. The different task are completely
+independent of one another and, thus, easy to parallelise. The main idea behind this
+is the ability to 'send things to the background' with the <code>&amp;</code> operator. Let's say
+you have an image called 'sun.png' and you'd like to use <code>convert</code> (comes with
+ImageMagick) to convet it to 'sun.jpg'. You could just run</p>
+<div class="highlight"><pre><span></span><code>        convert sun.png sun.jpg
+</code></pre></div>
+
+<p>While the programme is running you will not be able to do anything else because the
+prompt is blocked. If you now append <code>&amp;</code> to the command like so:</p>
+<div class="highlight"><pre><span></span><code>        convert sun.png sun.jpg &amp;
+</code></pre></div>
+
+<p>the programme will run in the background and you can launch the next job on image sunny.jpg.</p>
+<div class="highlight"><pre><span></span><code>        convert sun.png sun.jpg &amp; convert sunny.png sunny.jpg &amp;
+</code></pre></div>
+
+<p>You'll now have two instances of convert running in parallel. You could play this game with
+100 or 1000 images, but then the different instances will be competing over the CPU-cycles of
+your, say, 4-core laptop. They'll all be running at the same time and, in the worst case
+scenario, everything might crash because you don't have enough memory (depending on the size
+of the images each instance might take up a lot of RAM). For that reason you might be better off
+having at most as many instances running as you have CPU cores on your machine. For that purpose
+we can define a little helper function that we shall call 'pwait':</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="nv">pwait</span><span class="ss">()</span>{
+<span class="w">                </span><span class="k">while</span><span class="w"> </span>[<span class="w"> </span>$<span class="ss">(</span><span class="nv">jobs</span><span class="w"> </span><span class="o">-</span><span class="nv">p</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">wc</span><span class="w"> </span><span class="o">-</span><span class="nv">l</span><span class="ss">)</span><span class="w"> </span><span class="o">-</span><span class="nv">ge</span><span class="w"> </span><span class="mh">$1</span><span class="w"> </span>]<span class="c1">; do</span>
+<span class="w">                      </span><span class="nv">sleep</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">33</span>
+<span class="w">                </span><span class="nv">done</span>
+<span class="w">                </span>}
+</code></pre></div>
+
+<p>This function counts the number of running jobs in the current shell with the inbuilt
+tools <code>jobs</code> and <code>wc</code>, waits for 0.33 seconds (with <code>sleep</code>) in case the user-defined
+maximum number of jobs is running and counts again. If one of the jobs is done it will
+no longer block the running loop and the next iteration of the loop runs.
+Thus we could run <code>convert</code> on all .png images in the current
+working directory like this:</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span>for<span class="w"> </span>image<span class="w"> </span>in<span class="w"> </span>*.png;<span class="w"> </span>do
+<span class="w">            </span>convert<span class="w"> </span><span class="nv">$image</span><span class="w"> </span><span class="cp">${</span><span class="n">image</span><span class="o">%</span><span class="n">png</span><span class="cp">}</span>jpg<span class="w"> </span><span class="err">&amp;</span>
+<span class="w">            </span>pwait(4)
+<span class="w">        </span>done
+<span class="w">        </span>wait
+</code></pre></div>
+
+<p>The last <code>wait</code> blocks the prompt until the very last job is done.
+The syntax <code>${image%png}jpg</code> removes the file ending 'png' and replaces it with 'jpg'.
+In case you want to convert only a smaller subset (list) of the images, you can create
+the list and run through it in the following manner:</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span>list=&#39;image1.png<span class="w"> </span>image2.png<span class="w"> </span>image3.png<span class="w"> </span>image4.png&#39;
+<span class="w">        </span>for<span class="w"> </span>image<span class="w"> </span>in<span class="w"> </span><span class="nv">$list</span>;do
+<span class="w">            </span>convert<span class="w"> </span><span class="nv">$image</span><span class="w"> </span><span class="cp">${</span><span class="n">image</span><span class="o">%</span><span class="n">png</span><span class="cp">}</span>jpg<span class="w"> </span><span class="err">&amp;</span>
+<span class="w">            </span>pwait(4)
+<span class="w">        </span>done
+<span class="w">        </span>wait
+</code></pre></div></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="./archives.html">Archives</a>
+                <li><a href="./tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="./category/front-page.html">Front page</a></li>
+                <li><a href="./category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href=".">Tech Talk</a> &copy; Michael Olberg 2019</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="./theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

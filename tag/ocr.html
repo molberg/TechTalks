@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - OCR</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../ocr-and-digitization-of-plots.html"><h1>OCR and digitization of plots</h1></a>
+Wed 28 November 2018
+
+by <a class="url fn" href="../author/michael-olberg.html">Michael Olberg</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><h2>Optical character recognition</h2>
+<p>The tool of choice on Linux and MacOS is
+<a href="https://github.com/tesseract-ocr/tesseract/wiki">tesseract</a>, an open source
+tool originally developed by HP.</p>
+<h3>Installation</h3>
+<p>On Linux (with apt package manager)</p>
+<div class="highlight"><pre><span></span><code>    sudo apt install imagemagick
+    sudo apt install tesseract-ocr
+</code></pre></div>
+
+<p>and then install individual language packages</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">apt</span><span class="o">-</span><span class="nv">cache</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="o">--</span><span class="nv">names</span><span class="o">-</span><span class="nv">only</span><span class="w"> </span><span class="nv">tesseract</span><span class="o">-</span><span class="nv">ocr</span>
+<span class="w">    </span><span class="nv">sudo</span><span class="w"> </span><span class="nv">apt</span><span class="w"> </span><span class="nv">install</span><span class="w"> </span><span class="nv">tesseract</span><span class="o">-</span><span class="nv">ocr</span><span class="o">-</span><span class="nv">XXX</span><span class="w"> </span><span class="ss">(</span><span class="k">for</span><span class="w"> </span><span class="nv">language</span><span class="w"> </span><span class="nv">pack</span><span class="w"> </span><span class="nv">XXX</span>,<span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">XXX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">swe</span>,<span class="w"> </span><span class="nv">fra</span>,<span class="w"> </span>...<span class="ss">)</span>
+</code></pre></div>
+
+<p>For MacOS you find installation instructions <a href="https://gist.github.com/henrik/1967035">here</a></p>
+<h3>Typical workflow</h3>
+<p>Convert image to tiff format and then use tesseract to convert to text.
+An extension <code>.txt</code> will automatically be appended to the output file.</p>
+<p>So the following code will produce an intermediate file <code>input.tiff</code> and
+then convert to <code>output.txt</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nx">convert</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">png</span><span class="w"> </span><span class="o">-</span><span class="nx">resize</span><span class="w"> </span><span class="mi">400</span><span class="o">%</span><span class="w"> </span><span class="o">-</span><span class="k">type</span><span class="w"> </span><span class="nx">Grayscale</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">tiff</span>
+<span class="w">    </span><span class="nx">tesseract</span><span class="w"> </span><span class="o">-</span><span class="nx">l</span><span class="w"> </span><span class="nx">XXX</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">tiff</span><span class="w"> </span><span class="nx">output</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">convert</span><span class="w"> </span><span class="nx">using</span><span class="w"> </span><span class="nx">language</span><span class="w"> </span><span class="nx">XXX</span>
+</code></pre></div>
+
+<p>Two examples below, both were available as jpg images:</p>
+<h4>English quote, light text on dark background</h4>
+<p><img alt="English quote" src="../images/english.jpg"></p>
+<p>We need to reverse light and dark colours</p>
+<div class="highlight"><pre><span></span><code>    convert -negate -monochrome -density 300 english.jpg -depth 8 -strip -background white -alpha off english.tiff
+    tesseract english.tiff english  # will add extension .txt, uses english as default language
+</code></pre></div>
+
+<p>which results in:</p>
+<blockquote>
+<p>Continuing existence or cessation of
+existence: those are the scenarios. Is it
+more empowering mentally to work towards
+an accommodation of the downsizings and
+negative outcomes of adversarial
+circumstance, or would it be a greater
+enhancement of the bottom line to move
+forwards to a challenge to our current
+difficulties, and, by making a commitment
+to opposition, to effect their demise?</p>
+<p>Tom Burton
+Long Words Bother Me</p>
+</blockquote>
+<h4>Swedish quote</h4>
+<p><img alt="Swedish quote" src="../images/swedish.jpg"></p>
+<p>Here we just convert to gray scale. However, if we don't specify the
+language (<code>swe</code> in this case) we get gibberish.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nx">convert</span><span class="w"> </span><span class="o">-</span><span class="nx">monochrome</span><span class="w"> </span><span class="o">-</span><span class="nx">density</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="nx">swedish</span><span class="p">.</span><span class="nx">jpg</span><span class="w"> </span><span class="o">-</span><span class="k">type</span><span class="w"> </span><span class="nx">Grayscale</span><span class="w"> </span><span class="nx">swedish</span><span class="p">.</span><span class="nx">tiff</span>
+<span class="w">    </span><span class="nx">tesseract</span><span class="w"> </span><span class="nx">swedish</span><span class="p">.</span><span class="nx">tiff</span><span class="w"> </span><span class="nx">swenglish</span>
+</code></pre></div>
+
+<p>This produces</p>
+<blockquote>
+<p>varit sé jﬁvla trﬁtt pa all!
+53 j'zivla Hinge och nu bar
+jag ingen jéivla aning om
+hur jag kanner och vad
+jag Sir trim p5.</p>
+</blockquote>
+<p>whereas</p>
+<div class="highlight"><pre><span></span><code>    tesseract swedish.tiff -l swe swedish
+    cat swedish.txt
+</code></pre></div>
+
+<p>produces</p>
+<blockquote>
+<p>varit så jävla trött på allt
+så jävla länge och nu har
+jag ingen jävla aning om
+hur jag känner och vad
+jag är trött på.</p>
+</blockquote>
+<h3>PDF files</h3>
+<p>In order to convert pdf files, one needs (at least on Ubuntu) to
+change ImageMagick policy:</p>
+<div class="highlight"><pre><span></span><code><span class="n">    sudo vi /etc/ImageMagick-6/policy.xml</span>
+</code></pre></div>
+
+<p>and change <code>&lt;policy domain="coder" rights="none" pattern="PDF" /&gt;</code>
+to <code>&lt;policy domain="coder" rights="read/write" pattern="PDF" /&gt;</code></p>
+<p>Note, that converting pdf documents to tiff will preserve all pages as
+different layers of that image, your image viewer may only show you
+the first page!</p>
+<h2>Image digitization</h2>
+<p>A very good tool with support for all kinds of plots is
+<a href="https://automeris.io/WebPlotDigitizer/">WebPlotDigitizer</a></p></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/ocr.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="../category/front-page.html">Front page</a></li>
+                <li><a href="../category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">Tech Talk</a> &copy; Michael Olberg 2018</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

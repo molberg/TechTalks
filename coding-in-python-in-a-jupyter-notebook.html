@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - Coding in python in a Jupyter Notebook</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="./theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./theme/bootstrap.min.css" rel="stylesheet">
+    <link href="./theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="./theme/local.css" rel="stylesheet">
+    <link href="./theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href=".">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="./pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Coding in python in a Jupyter Notebook</h1>
+Thu 22 March 2018
+
+by <a class="url fn" href="./author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+        </div>
+	
+        <div><ul>
+<li>I made some slides showing how to <a href="./docs/jupyter.pdf">get started</a></li>
+<li>check out the <a href="https://jupyter.org/">jupyter website</a> for docs and the like</li>
+<li>for further info on the jupyter extensions check out <a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions">their github page</a></li>
+<li>feel free to download and play around with the <a href="./code/jupyter.tar.gz">notebook we worked on</a>; (tarball contains both the notebook and the fits file)</li>
+</ul>
+<h2>Installation</h2>
+<ul>
+<li>assuming you have 'pip' installed run the following</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip jupyter install
+</code></pre></div>
+
+<ul>
+<li>if you'd like to use the extensions we discussed you'll also need to</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+</code></pre></div>
+
+<ul>
+<li>optionally you can also create a config file like so</li>
+</ul>
+<div class="highlight"><pre><span></span><code>jupyter notebook --generate-config
+</code></pre></div>
+
+<ul>
+<li>this is useful in case you want to run jupyter not in your default web browers; to get this to work you'll need to modify the file <code>$HOME/.jupyter/jupyter_notebook_config.py</code> by changing the follwing line according to your needs: <code>c.NotebookApp.browser = '/usr/bin/browser'</code></li>
+<li>if you'd like to make use of widgets like ipywidget you'll need to have them install and enable them in jupyter:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip install ipywidgets
+jupyter nbextension enable --py widgetsnbextension
+</code></pre></div>
+
+<h2>start/stop a notebook</h2>
+<ul>
+<li>from a console run <code>jupyter notebook</code></li>
+<li>this will open up a tab in your favourite web browser, check out the <a href="./docs/jupyter.pdf">pdf</a> on how to continue from here</li>
+<li>to stop the jupyter server you have to hit Ctrl-c</li>
+</ul>
+<h2>Run jupyter on remote machine</h2>
+<ul>
+<li>let's assume you need to run/test code on a remote machine and you want to do this in jupyter notebook</li>
+<li>what you'll need to do is start the jupyter server like this:
+   <code>jupyter notebook --port=5558 --ip=127.0.0.1</code></li>
+<li>this will send the X-window to localhost on port 5558 (note, it does not need to be on port 5558)</li>
+<li>on your local machine you create a SSH tunnel mapping the remote X-session onto some local port:
+   <code>ssh -L 5558:localhost:5558 user@remoteMachine</code></li>
+<li>you open the notebook in your browser of choice using the following as the URL:
+   <code>http://localhost:5558/tree#</code></li>
+</ul></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="./archives.html">Archives</a>
+                <li><a href="./tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="./category/front-page.html">Front page</a></li>
+                <li><a href="./category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href=".">Tech Talk</a> &copy; Michael Olberg 2019</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="./theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

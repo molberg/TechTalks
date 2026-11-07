@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - containers</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../containers.html"><h1>Containers</h1></a>
+Thu 22 February 2018
+
+by <a class="url fn" href="../author/stephen-bourke.html">Stephen Bourke</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><h2>What is a container?</h2>
+<ul>
+<li>It’s a file system image (eg. tar archive) that gets used instead
+   of the local file system</li>
+<li>An application to set things up (eg. singularity, docker)</li>
+<li>When you run an application via a container that application is
+   isolated from the rest of the OS</li>
+<li>Made possible by Linux kernel features</li>
+</ul>
+<h2>What can containers do</h2>
+<ul>
+<li>Separate application from infrastructure</li>
+<li>Ease / Speed of deployment</li>
+<li>Archive / Repeatability</li>
+<li>Application isolation</li>
+</ul>
+<h2>Introduction</h2>
+<ul>
+<li>2 ways to think of containers:<ul>
+<li>As an application with all of its dependencies</li>
+<li>As an OS running alongside the native OS</li>
+</ul>
+</li>
+<li>A container may be limited in its use of system resources<ul>
+<li>It can be restricted to a subset of cores/memory</li>
+</ul>
+</li>
+</ul>
+<h2>Implementations</h2>
+<ul>
+<li>Singularity<ul>
+<li>HPC Science &amp; Engineering</li>
+<li>Containers used like any other application containers</li>
+<li>Native network comms</li>
+<li>Supported by many HPC centres</li>
+</ul>
+</li>
+<li>Docker<ul>
+<li>PaaS / Micro Services</li>
+<li>Daemon runs an manages containers</li>
+<li>NAT</li>
+<li>Run on your own [cloud] resources</li>
+</ul>
+</li>
+</ul>
+<h3>Singularity</h3>
+<ul>
+<li>You need admin right to create containers (mostly)<ul>
+<li>Do this on your own machine</li>
+</ul>
+</li>
+<li>Copy container image to remote host</li>
+<li>Run container as a normal user</li>
+</ul>
+<h3>Singularity commands</h3>
+<ul>
+<li>build (--sandbox)<ul>
+<li>Can put build specs in a text file</li>
+</ul>
+</li>
+<li>exec (--writable)</li>
+<li>run<ul>
+<li>shortcut for most useful command in the container (defaults to bash)</li>
+</ul>
+</li>
+</ul>
+<h3>Example</h3>
+<p>If you <em>really</em> need <code>gvim</code> on <code>hebbe</code> (machine at Chalmers C3SE)</p>
+<blockquote>
+<p>sudo singularity build gvim recipe.gvim
+scp gvim hebbe:
+ssh hebbe
+./gvim</p>
+</blockquote>
+<p><strong>Hooray!</strong></p>
+<h3>Real world examples</h3>
+<blockquote>
+<p>sudo singularity build --sandbox ubuntu/ docker://kernsuite/base
+sudo singularity exec --writable ubuntu/ bash</p>
+</blockquote>
+<p>... do stuff ...</p>
+<blockquote>
+<p>sudo singularity build ubuntu.simg ubuntu/</p>
+</blockquote>
+<h2>Summary review</h2>
+<ul>
+<li>A Container Image:<ul>
+<li>A file system that will be used as / (i.e. root directory)</li>
+</ul>
+</li>
+<li>A Running Container:<ul>
+<li>An application running with the image as its file system</li>
+</ul>
+</li>
+<li>The Container Image (file system) can be very minimal<ul>
+<li>just the application, its libraries and a few low level files</li>
+</ul>
+</li>
+<li>More common is that it will contain a base OS distribution<ul>
+<li>This is just because it’s an easy way of making container images</li>
+<li>Most of that stuff isn’t needed</li>
+</ul>
+</li>
+<li>Linux kernel can isolate the container for rest of the OS<ul>
+<li>This is the default in docker</li>
+<li><em>instance</em> commands in Singularity</li>
+<li>Multiple applications can be run in the same container</li>
+</ul>
+</li>
+<li>A typical linux filesystem</li>
+<li>Optionally some extra bits for convenience<ul>
+<li><em>run</em> script, <em>exec</em> script, <em>environment</em> file, meta data file (Creator, date, etc)</li>
+</ul>
+</li>
+<li>Default format is squashfs<ul>
+<li>Can be a plain directory structure</li>
+<li>Can export an Image as a tar file</li>
+</ul>
+</li>
+<li>You can also import a tar file as a container<ul>
+<li>But you don’t really have to</li>
+<li>Can just untar and use the directory as the container image</li>
+</ul>
+</li>
+<li>Upload to singularity-hub or docker-hub<ul>
+<li>Run them on future versions of linux and reproduce results</li>
+<li>Linux (the kernel) takes backwards compatibility very seriously</li>
+<li>(If singularity, singularity-hub is still around :-P )</li>
+</ul>
+</li>
+<li>Very straigh forward and versatile</li>
+<li>Any idea I try seems to work</li>
+<li>GPU acceleration is a exception<ul>
+<li>Often possible but a bit messy</li>
+<li>You’re stuck with the host systems kernel module</li>
+<li>Nvidia do not maintain backwards compatibility</li>
+</ul>
+</li>
+</ul>
+<p>The slides are in this <a href="../docs/sbourke_containers.pdf">pdf</a></p></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/containers.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="../category/front-page.html">Front page</a></li>
+                <li><a href="../category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">Tech Talk</a> &copy; Michael Olberg 2018</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

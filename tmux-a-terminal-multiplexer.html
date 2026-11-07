@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tech Talk - Tmux - a terminal multiplexer</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Olberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="./theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./theme/bootstrap.min.css" rel="stylesheet">
+    <link href="./theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="./theme/local.css" rel="stylesheet">
+    <link href="./theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href=".">Tech Talk</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="./pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Tmux - a terminal multiplexer</h1>
+Mon 15 January 2018
+
+by <a class="url fn" href="./author/franz-kirsten.html">Franz Kirsten</a>
+ 
+
+
+        </div>
+	
+        <div><ul>
+<li>The slides are in this <a href="./docs/tmux.pdf">tmux.pdf</a></li>
+<li>if you know <code>screen</code>: <code>tmux</code> is a similar thing but I like it a lot more</li>
+<li><a href="http://www.dayid.org/comp/tm.html"><code>tmux</code> vs <code>screen</code> cheat sheet</a></li>
+</ul>
+<h2>What is it?</h2>
+<h3>Wikipedia</h3>
+<blockquote>
+<p><code>tmux</code> is a software application that can be used to multiplex several
+virtual consoles, allowing a user to access multiple separate
+terminal sessions inside a single terminal window or remote
+terminal session</p>
+</blockquote>
+<h3>Github</h3>
+<p><a href="https://github.com/tmux/tmux/wiki">tmux wiki</a></p>
+<blockquote>
+<p><code>tmux</code> is a terminal multiplexer. It lets you switch easily between
+several programs in one terminal, detach them (they keep
+running in the background) and reattach them to a different
+terminal. And do a lot more</p>
+</blockquote>
+<h2>Tmux - what I use it for</h2>
+<ul>
+<li>it helps me to organise my desktop in such a way, that I have only
+   one terminal open but still as many terminal sessions as I please</li>
+<li>it allows me to start jobs on remote machines and have them run
+   overnight without me having to stay logged in</li>
+<li>it has X-forwarding capabilies if needed</li>
+</ul>
+<h2>Get it, docs, manuals</h2>
+<ul>
+<li>linux distributions like Ubuntu ship it as a package (get it via apt-get)</li>
+<li>on remote clusters without root permissions you might need to
+  compile it yourself (really easy!)<ul>
+<li>get it from the <a href="https://github.com/tmux/tmux/wiki">tmux github page</a></li>
+<li>before you compile <code>tmux</code> you'll need to build
+  <a href="https://sourceforge.net/projects/levent/?source=directory">libevent</a></li>
+<li>you'll also need <a href="https://github.com/gittup/ncurses">ncurses</a></li>
+</ul>
+</li>
+<li>for quick references on key-bindings use, e.g.,
+  this <a href="http://tmuxcheatsheet.com/">cheat sheet</a>
+  or <a href="https://gist.github.com/MohamedAlaa/2961058">this one here</a></li>
+<li>you can configue key-bindings and like by creating a file called
+  <code>.tmux.conf</code> in your <code>$HOME</code> directory</li>
+</ul></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="./archives.html">Archives</a>
+                <li><a href="./tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="./category/front-page.html">Front page</a></li>
+                <li><a href="./category/talks.html">talks</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href=".">Tech Talk</a> &copy; Michael Olberg 2019</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="./theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>
